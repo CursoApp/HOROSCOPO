@@ -1,29 +1,16 @@
 package com.example.horoscopo
 
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
 
-    val horoscopeList: List<Horoscope> = listOf(
-        Horoscope("aries", R.string.horoscope_name_aries, R.string.horoscope_date_aries, R.drawable.aries_svgrepo_com),
-        Horoscope("aries", R.string.horoscope_name_taurus, R.string.horoscope_date_aries, R.drawable.aries_svgrepo_com),
-        Horoscope("aries", R.string.horoscope_name_gemini, R.string.horoscope_date_aries, R.drawable.aries_svgrepo_com),
-        Horoscope("aries", R.string.horoscope_name_cancer, R.string.horoscope_date_aries, R.drawable.aries_svgrepo_com),
-        Horoscope("aries", R.string.horoscope_name_leo, R.string.horoscope_date_aries, R.drawable.aries_svgrepo_com),
-        Horoscope("aries", R.string.horoscope_name_virgo, R.string.horoscope_date_aries, R.drawable.aries_svgrepo_com),
-        Horoscope("aries", R.string.horoscope_name_libra, R.string.horoscope_date_aries, R.drawable.aries_svgrepo_com),
-        Horoscope("aries", R.string.horoscope_name_scorpio, R.string.horoscope_date_aries, R.drawable.aries_svgrepo_com),
-        Horoscope("aries", R.string.horoscope_name_sagittarius, R.string.horoscope_date_aries, R.drawable.aries_svgrepo_com),
-        Horoscope("aries", R.string.horoscope_name_capricorn, R.string.horoscope_date_aries, R.drawable.aries_svgrepo_com),
-        Horoscope("aries", R.string.horoscope_name_aquarius, R.string.horoscope_date_aries, R.drawable.aries_svgrepo_com),
-        Horoscope("aries", R.string.horoscope_name_pisces, R.string.horoscope_date_aries, R.drawable.aries_svgrepo_com)
-    )
+
+
 
     lateinit var recyclerView: RecyclerView
 
@@ -33,11 +20,24 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView = findViewById(R.id.recyclerView)
 
-        val adapter = HoroscopeAdapter(horoscopeList)
+        val adapter = HoroscopeAdapter(horoscopeList) { position ->
+            navigateToDetail(horoscopeList[position])
+        /* Con ESTO, he llamado a la "LISTA"*/
+        }
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
         //recyclerView.layoutManager = GridLayoutManager(this, 2)
     }
+
+    fun navigateToDetail(horoscope: Horoscope) {
+        val intent: Intent = Intent(this, Activity_Detail::class.java)
+        intent.putExtra("HOROSCOPE_ID", horoscope.id)
+        intent.putExtra("HOROSCOPE_NAME", horoscope.name)
+        intent.putExtra("HOROSCOPE_LOGO", horoscope.logo)
+        startActivity(intent)
+    }
+
+
 }
 /*import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
