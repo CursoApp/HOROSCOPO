@@ -9,8 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
 
-
-
+    lateinit var horoscopeList: List<Horoscope>
 
     lateinit var recyclerView: RecyclerView
 
@@ -20,9 +19,11 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView = findViewById(R.id.recyclerView)
 
+        horoscopeList = HoroscopeProvider.findAll()
+
         val adapter = HoroscopeAdapter(horoscopeList) { position ->
             navigateToDetail(horoscopeList[position])
-        /* Con ESTO, he llamado a la "LISTA"*/
+        /* Con ESTA FUNCION LAMBDA, he llamado a la "LISTA" utiliza "navigate punto33*/
         }
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -30,14 +31,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun navigateToDetail(horoscope: Horoscope) {
-        val intent: Intent = Intent(this, Activity_Detail::class.java)
+        val intent: Intent = Intent(this, DetailActivity::class.java)
         intent.putExtra("HOROSCOPE_ID", horoscope.id)
-        intent.putExtra("HOROSCOPE_NAME", horoscope.name)
-        intent.putExtra("HOROSCOPE_LOGO", horoscope.logo)
+        //intent.putExtra("HOROSCOPE_NAME", horoscope.name)
+        //intent.putExtra("HOROSCOPE_LOGO", horoscope.logo)
         startActivity(intent)
     }
-
-
 }
 /*import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

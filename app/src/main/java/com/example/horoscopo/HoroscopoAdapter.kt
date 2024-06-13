@@ -1,5 +1,6 @@
 package com.example.horoscopo
 
+import android.text.style.BackgroundColorSpan
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -35,8 +36,7 @@ class HoroscopeAdapter(private val dataSet: List<Horoscope>, private val onItemC
         holder.itemView.setOnClickListener {
             onItemClickListener(position)
             // Esto es lo que estaba al principio, pero luego lo cambiamos
-        // por lo de arriba: Log.i("ADAPTER", "He hecho click en la celda")
-
+        // por lo de arriba: Log.i("ADAPTER". OnItemClick: "He hecho click en la celda")
         }
     }
 
@@ -58,6 +58,7 @@ class HoroscopeViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         nameTextView.setText(horoscope.name)
         descTextView.setText(horoscope.description)
         logoImageView.setImageResource(horoscope.logo)
+        itemView.setBackgroundResource(horoscope.color)
     }
 }
 
