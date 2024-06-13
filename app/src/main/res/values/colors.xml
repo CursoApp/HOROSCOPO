@@ -7,4 +7,19 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="furcia">#FF00FF</color>
+    <color name="Amarillo">#FFFF00</color>
+    <color name="Rojo">#FF0000</color>
+    <color name="Celeste">#05ffff</color>
+    <color name="CelesClar">#c0ffff</color>
+    <color name="Azulete">#005b96</color>
+    <color name="OtrAzul">#b3cde0</color>
+    <color name="Nar1">#ff8100</color>
+    <color name="Nar3">#ffc99d</color>
+    <color name="Mar1">#8b8072</color>
+    <color name="sea">#674ea7</color>
+    <color name="fdo">#e7e6f2</color>
+    <color name="fdo2">#dedede</color>
+
+
 </resources>
