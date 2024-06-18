@@ -1,6 +1,6 @@
-package com.example.horoscopo
+package com.example.horoscopo.data
 
-import androidx.core.graphics.toColor
+import com.example.horoscopo.R
 
 class HoroscopeProvider {
 
