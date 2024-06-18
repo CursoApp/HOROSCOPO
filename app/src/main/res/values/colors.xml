@@ -20,6 +20,6 @@
     <color name="sea">#674ea7</color>
     <color name="fdo">#e7e6f2</color>
     <color name="fdo2">#dedede</color>
-
-
+    <color name="fecha">#2980B9</color>
+    <color name="transparent">#00000000</color>
 </resources>
