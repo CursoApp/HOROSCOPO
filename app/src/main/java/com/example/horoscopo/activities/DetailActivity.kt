@@ -167,7 +167,9 @@ class DetailActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
-
+    
+        // +++ >>> DESDE AQUI PARA CONECTAR CON INTERNET Y QUE ME LLEGUE EL HOROSCOPO DIARIO<<< ++++
+        
     fun getHoroscopeLuck(method: String) {
         progressIndicator.visibility = View.VISIBLE
         // Llamada en hilo secundario
@@ -210,7 +212,7 @@ class DetailActivity : AppCompatActivity() {
             } catch (e: Exception) {
                 Log.e("HTTP", "Response Error :: ${e.stackTraceToString()}")
             }
-        }
+        } // +++ HASTA AQUI PARA CONECTAR CON INTERNET Y QUE ME LLEGUE EL HOROSCOPO DIARIO ++++
     }
 }
 
