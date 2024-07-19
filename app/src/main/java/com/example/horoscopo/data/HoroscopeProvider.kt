@@ -19,7 +19,7 @@ class HoroscopeProvider {
             Horoscope("capricorn", R.string.horoscope_name_capricorn, R.string.horoscope_date_capricorn, R.drawable.capricorn_svgrepo_com, R.color.Nar3),
             Horoscope("aquarius", R.string.horoscope_name_aquarius, R.string.horoscope_date_aquarius, R.drawable.aquarius_svgrepo_com, R.color.Mar1),
             Horoscope("pisces", R.string.horoscope_name_pisces, R.string.horoscope_date_pisces, R.drawable.pisces_svgrepo_com, R.color.sea)
-        )
+        )  //Esto está en PRIVATE para q solo esta App las pueda utilizar
 
         fun findAll() : List<Horoscope> {
             return horoscopeList
